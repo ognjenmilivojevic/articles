@@ -1,0 +1,37 @@
+<article class="card" [style.background-color]="true?color:color">
+    <figure [routerLink]="['/clanak',id]" *ngIf="!viewMore" class="card__image-container">
+        <img class="card__image" src={{imageUrl}} alt="city">
+    </figure>
+    <svg *ngIf="!viewMore" class="card__svg" viewBox="0 0 800 500">
+        <path
+            d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500"
+            stroke="transparent" attr.fill="{{color}}" />
+        <path class="card__line"
+            d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink"
+            stroke-width="3" fill="transparent" />
+    </svg>
+    <div class="card__content">
+        <h1 class="card__title" [routerLink]="['/clanak',id]">{{title}}</h1>
+        <p *ngIf="viewMore" style="margin-bottom: 100px;">{{text}}</p>
+        <p *ngIf="!viewMore" style="margin-bottom: 100px;">{{description}}</p>
+
+    </div>
+    <footer class="card__footer">
+        <time class="card__time">{{date | date}}</time>
+        <button class="card__button" (click)="showHide()">
+            <p *ngIf="viewMore"> Pročitaj manje </p>
+            <p *ngIf="!viewMore"> Pročitaj više </p>
+            <div *ngIf="!viewMore">
+                <img class="card_read_more-icon1" src="../../assets/picture/scroll-arrow-to-down.svg" alt="arrow-down">
+                <img class="card_read_more-icon2" src="../../assets/picture/scroll-arrow-to-down.svg" alt="arrow-down">
+            </div>
+
+            <div *ngIf="viewMore">
+                <img class="card_read_more-icon1" src="../../assets/picture/arrow-top.png" alt="arrow-top">
+                <img class="card_read_more-icon2" src="../../assets/picture/arrow-top.png" alt="arrow-top">
+            </div>
+        </button>
+    </footer>
+
+
+</article>

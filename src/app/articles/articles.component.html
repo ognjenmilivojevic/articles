@@ -1,0 +1,16 @@
+<div class="articles-container">
+
+    <nav class="meni" [ngStyle]="{ 'background-image': 'url(' + pictureUrl + ')'}">
+        <a [routerLink]="['/clanci','sve']" routerLinkActive="active">#Sve </a>
+        <a [routerLink]="['/clanci','kultura']" routerLinkActive="active">#Култура </a>
+        <a [routerLink]="['/clanci','drustvo']" routerLinkActive="active">#Друштво</a>
+        <a [routerLink]="['/clanci','svet']" routerLinkActive="active">#Свијет</a>
+        <app-search (inputValueChanged)="getSearchValue($event)"></app-search>
+    </nav>
+    <p class="message" *ngIf="!existArticle">{{message}}</p>
+    <!-- <img class="cover" src={{pictureUrl}}   alt=""> --> -->
+    <app-article class="article" *ngFor="let article of articleList" id={{article.id}} title={{article.title}}
+        imageUrl={{article.imageUrl}} description={{article.description}} text={{article.text}} date={{article.date}}
+        category={{article.category}} (clickChange)=display($event)>
+    </app-article>
+</div>

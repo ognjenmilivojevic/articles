@@ -1,0 +1,6 @@
+<form id="content">
+    <input [(ngModel)]="serchValue" type="text" name="input " class="input" id="search-input"
+        [ngClass]="{ 'square': condition}" (keyup)="serch()">
+    <button (click)="expand()" type="reset" class="search" id="search-btn" [ngClass]="{ 'close': condition}">
+    </button>
+</form>
