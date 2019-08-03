@@ -24,7 +24,7 @@ img {
 
 .card {
     position: relative;
-    background: #011627;
+    background-color: #052c4de8;
     width: 100%;
     min-height: 100vh;
     padding: 2rem;
@@ -60,6 +60,7 @@ img {
 }
 
 .card__content {
+    position: relative;
     width: 40%;
     z-index: 10;
     margin-left: 20px;

@@ -6,4 +6,6 @@ export class Article {
     text: string;
     date: Date;
     category:string;
+    source:string;
+    author:string;
 }

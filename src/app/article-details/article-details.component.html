@@ -1,34 +1,22 @@
 <article class="card">
     <figure class="card__image-container">
-        <img class="card__image" src={{article.imageUrl}} alt="city">
+        <img class="card__image" src={{article?.imageUrl}} alt="city">
     </figure>
-
     <div class="card__content">
-
-        <h1 class="card__title">{{article.title}}</h1>
-        <p style="margin-bottom: 100px; ">{{article.text}}
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga minima ullam, velit magnam voluptas possimus
-            dolore vero fugiat praesentium hic atque excepturi ipsa sequi voluptatem ab? Accusamus eum temporibus totam.
-            lo Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, error non natus labore autem sed
-            iusto possimus inventore recusandae voluptates, maiores rerum exercitationem explicabo quis? Excepturi ullam
-            odit nulla iste.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit voluptates quam nostrum
-            quas omnis ad debitis quo corporis vel? Modi adipisci harum eos at, fuga voluptatum cumque ipsum quos odio?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora unde fugit amet temporibus molestiae
-            accusamus recusandae est. Beatae, exercitationem. Quis, eius harum! Veritatis repudiandae itaque tenetur
-            deserunt quam rem quaerat.</p>
+        <h1 class="card__title">{{article?.title}}</h1>
+        <p style="margin-bottom: 100px; ">{{article?.text}}
+        </p>
+      
         <nav class="meni">
-            <a [routerLink]="['/clanci','sve']" routerLinkActive="active">#Sve </a>
-            <a [routerLink]="['/clanci','kultura']" routerLinkActive="active">#Култура </a>
-            <a [routerLink]="['/clanci','drustvo']" routerLinkActive="active">#Друштво</a>
-            <a [routerLink]="['/clanci','svet']" routerLinkActive="active">#Свијет</a>
-
+            <a [routerLink]="['/clanci','top-news']" routerLinkActive="active">#Top news </a>
+            <a [routerLink]="['/clanci','bitcoin']" routerLinkActive="active">#Bitcoin </a>
+            <a [routerLink]="['/clanci','wall-street']" routerLinkActive="active">#Wall Street</a>
+            <a [routerLink]="['/clanci','apple']" routerLinkActive="active">#Apple</a>
         </nav>
+        <a style="float:left; font-size: 13px" href={{article?.source}}>GO TO SOURCE</a>
+        <p style="font-style: italic;margin-top:32px;position: absolute;left: 86%;bottom: -60%;">{{article?.author}}</p>   
     </div>
     <footer class="card__footer">
-        <time class="card__time">{{article.date | date}}</time>
-
+        <time class="card__time">{{article?.date | date}}</time>
     </footer>
-
-
 </article>
